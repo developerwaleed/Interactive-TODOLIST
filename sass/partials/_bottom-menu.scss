@@ -1,0 +1,91 @@
+//vars
+$white: #fff;
+$purple: #496ed4;
+$pink: #6e45d4;
+$ocher: #7638c7;
+$cyan: #6728b9;
+$transition: 0.3s ease;
+
+h1,
+h3 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+#wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  background-color: transparent;
+//   height: 100vh;
+  transition: $transition;
+//   margin-top: 140px;
+
+}
+.menu {
+  background: $white;
+  width: 100vw;
+  padding: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 40px;
+    transition: $transition;
+    &:last-child {
+      margin-right: 0px;
+    }
+    &.inactive {
+      background-color: transparent !important;
+      svg {
+        color: #000 !important;
+      }
+      .menu-item__text {
+        min-width: 0px;
+        opacity: 0;
+        font-size: 0px;
+      }
+    }
+    &.purple {
+      background-color: lighten($purple, 40%);
+      color: $purple;
+    }
+    &.pink {
+      background-color: lighten($pink, 40%);
+      color: $pink;
+    }
+    &.ocher {
+      background-color: lighten($ocher, 40%);
+      color: $ocher;
+    }
+    &.cyan {
+      background-color: lighten($cyan, 40%);
+      color: $cyan;
+    }
+    &__text {
+      min-width: 80px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 12px;
+      opacity: 1;
+      transition: opacity $transition;
+    }
+    &__icon {
+      display: inline-block;
+      text-align: center;
+      font-size: 0px;
+      svg {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+}
