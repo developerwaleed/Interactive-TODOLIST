@@ -1,51 +1,85 @@
 .list-header {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    height: 30vh;
-    width: 100vw;
-    background-image: url('/images/bg-mobile-light.jpg');
-    background-repeat: no-repeat;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 30vh;
+  width: 100vw;
+  background-image: url('/images/bg-mobile-light.jpg');
+  background-repeat: no-repeat;
 
+  span {
+    font-weight: 700;
+    color: white;
+    padding-top: 50px;
+    padding-left: 20px;
+    font-size: 27px;
+  }
 
-    span {
-        color: white;
-        padding-top: 50px;
-        padding-left: 20px;
-        font-size: 27px;
-    }
-
-    img {
-        padding-top: 50px;
-        padding-right: 20px;
-    }
+  img {
+    margin-top: 50px;
+    padding-right: 20px;
+  }
 }
 
 .task-input {
-    display: flex;
-    position: absolute;
-    margin-top: 7rem;
-    margin-left: 1.5rem;
-    background-color: white;
-    width: 80vw;
-    padding: 15px;
-    border-radius: 6px;
-    div {
-        border: 1px solid $Very-Light-Grayish-Blue;
-    }
-    input {
+  display: flex;
+  position: absolute;
+  margin-top: 7rem;
+  margin-left: 1.5rem;
+  background-color: white;
+  width: 85vw;
+  padding: 10px 20px;
+  border-radius: 6px;
+
+  div {
+    // border: 1px solid $Very-Light-Grayish-Blue;
+  }
+  input {
     border: none;
     outline: none;
-    font-family: 'Josefin Sans', sans-serif;
     background-color: transparent;
-    }
+  }
 }
 
 .checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    color: $Very-Light-Grayish-Blue;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  color: $Very-Light-Grayish-Blue;
+  cursor: pointer;
+  border: 1px solid $Very-Light-Grayish-Blue;
+}
+
+.Task-Container {
+  margin-left: 1.5rem;
+  background-color: white;
+  margin-top: 11rem;
+  position: absolute;
+  width: 85vw;
+//   padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 100px -40px $Dark-Grayish-Blue;
+  li {
+      display: flex;
+      justify-content: space-between;
+    padding: 20px;
+    // padding-left: 0;
+    border-bottom: 1px solid $Very-Light-Grayish-Blue;
+    .sub-task {
+        display: flex;
+    }
+    input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 40
 }
