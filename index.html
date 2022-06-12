@@ -10,17 +10,18 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <script defer src="./js/bottomMenu.js"></script>
+    <script defer src="./js/toggle-DarkMode.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.17.0/feather.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>TO DO LIST</title>
   </head>
   <body>
     <main>
-      <div class="list-header">
+      <div class="list-header mobile-lightMode-BG">
         <span>T O D O</span>
-        <img src="./images/icon-moon.svg" alt="toggle-mode" height="20px" />
+        <img id="moon" src="./images/icon-moon.svg" alt="toggle-mode" height="20px" />
       </div>
-      <div class="task-input">
+      <div class="task-input dark-Mode">
         <div class="checkbox" id="input-div"></div>
         <input
           type="text"
@@ -31,7 +32,7 @@
       </div>
 
       <ul class="Task-Container">
-        <li id="Task1">
+        <li id="Task1" class="list-item">
           <div class="sub-task">
             <div class="checkbox" id="input-div"></div>
             <input
@@ -45,7 +46,7 @@
           <span class="material-symbols-outlined"> delete </span>
         </li>
 
-        <li id="Task1">
+        <li id="Task1" class="list-item">
           <div class="sub-task">
             <div class="checkbox" id="input-div"></div>
             <input
@@ -58,7 +59,7 @@
           </div>
           <span class="material-symbols-outlined"> delete </span>
         </li>
-        <li id="Task1">
+        <li id="Task1" class="list-item">
           <div class="sub-task">
             <div class="checkbox" id="input-div"></div>
             <input
@@ -71,7 +72,7 @@
           </div>
           <span class="material-symbols-outlined"> delete </span>
         </li>
-        <li id="Task1">
+        <li id="Task1" class="list-item">
           <div class="sub-task">
             <div class="checkbox" id="input-div"></div>
             <input
@@ -84,7 +85,7 @@
           </div>
           <span class="material-symbols-outlined"> delete </span>
         </li>
-        <li id="Task1">
+        <li id="Task1" class="list-item">
           <div class="sub-task">
             <div class="checkbox" id="input-div"></div>
             <input
@@ -97,7 +98,7 @@
           </div>
           <span class="material-symbols-outlined"> delete </span>
         </li>
-        <li id="Task1">
+        <li id="Task1" class="list-item">
           <div class="sub-task">
             <div class="checkbox" id="input-div"></div>
             <input

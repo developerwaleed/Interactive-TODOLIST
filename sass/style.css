@@ -13,12 +13,23 @@ body {
   background-color: hsl(0deg, 0%, 98%);
 }
 
+.body-darkmode {
+  background-color: hsl(235deg, 21%, 11%);
+}
+
+.dark-Mode {
+  background-color: hsl(237deg, 14%, 26%);
+}
+
+.dark-text-color {
+  color: hsl(234deg, 39%, 85%);
+}
+
 .list-header {
   display: flex;
   justify-content: space-between;
   height: 30vh;
   width: 100vw;
-  background-image: url("/images/bg-mobile-light.jpg");
   background-repeat: no-repeat;
 }
 .list-header span {
@@ -31,6 +42,14 @@ body {
 .list-header img {
   margin-top: 50px;
   padding-right: 20px;
+}
+
+.mobile-lightMode-BG {
+  background-image: url("/images/bg-mobile-light.jpg");
+}
+
+.mobile-DarkMode-BG {
+  background-image: url("/images/bg-desktop-dark.jpg");
 }
 
 .task-input {

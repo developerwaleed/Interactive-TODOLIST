@@ -2,13 +2,24 @@ body {
   background-color: $Very-Light-Gray;
 }
 
+.body-darkmode {
+  background-color: $Very-Dark-Blue;
+}
+
+.dark-Mode {
+  background-color: $Very-Dark-Grayish-Blue;
+}
+
+.dark-text-color {
+  color: $Light-Grayish-Blue;
+}
+
 .list-header {
   // position: fixed;
   display: flex;
   justify-content: space-between;
   height: 30vh;
   width: 100vw;
-  background-image: url('/images/bg-mobile-light.jpg');
   background-repeat: no-repeat;
 
   span {
@@ -23,6 +34,14 @@ body {
     margin-top: 50px;
     padding-right: 20px;
   }
+}
+
+.mobile-lightMode-BG {
+  background-image: url('/images/bg-mobile-light.jpg');
+}
+
+.mobile-DarkMode-BG {
+  background-image: url('/images/bg-desktop-dark.jpg');
 }
 
 .task-input {
@@ -98,13 +117,12 @@ body {
 }
 
 footer {
-margin-top: 2rem;
-text-align: center;
-padding: 20px;
+  margin-top: 2rem;
+  text-align: center;
+  padding: 20px;
   p {
     color: $Dark-Grayish-Blue;
   }
-
 }
 
 .material-symbols-outlined {
