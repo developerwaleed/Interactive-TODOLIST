@@ -14,15 +14,21 @@ body {
 }
 
 .body-darkmode {
-  background-color: hsl(235deg, 21%, 11%);
+  background-color: hsl(235deg, 21%, 11%) !important;
 }
 
 .dark-Mode {
-  background-color: hsl(237deg, 14%, 26%);
+  background-color: hsl(235deg, 24%, 19%) !important;
+  color: hsl(234deg, 39%, 85%);
+  border-bottom: 1px solid hsl(237deg, 14%, 26%) !important;
 }
 
 .dark-text-color {
-  color: hsl(234deg, 39%, 85%);
+  color: hsl(234deg, 39%, 85%) !important;
+}
+
+.checkBox-Color {
+  border: 1px solid hsl(237deg, 14%, 26%) !important;
 }
 
 .list-header {

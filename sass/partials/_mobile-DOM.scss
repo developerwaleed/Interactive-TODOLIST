@@ -3,15 +3,22 @@ body {
 }
 
 .body-darkmode {
-  background-color: $Very-Dark-Blue;
+  background-color: $Very-Dark-Blue !important;
 }
 
 .dark-Mode {
-  background-color: $Very-Dark-Grayish-Blue;
+  background-color: $Very-Dark-Desaturated-Blue !important;
+  color: $Light-Grayish-Blue;
+  border-bottom: 1px solid $Very-Dark-Grayish-Blue !important;
 }
 
 .dark-text-color {
-  color: $Light-Grayish-Blue;
+  color: $Light-Grayish-Blue !important;
+}
+
+.checkBox-Color {
+  border: 1px solid $Very-Dark-Grayish-Blue !important;
+  // border-color: $Very-Dark-Grayish-Blue;
 }
 
 .list-header {

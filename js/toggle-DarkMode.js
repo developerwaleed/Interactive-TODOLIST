@@ -2,6 +2,7 @@ const changeModeButton = document.getElementById('moon');
 const stylesheet = document.styleSheets[0]
 const listItems = document.querySelectorAll('.list-item');
 const listItemsText = document.querySelectorAll('.input-task');
+const checkBoxs = document.querySelectorAll('.checkbox');
 
 changeModeButton.addEventListener('click', () => {
     const parentElem = changeModeButton.parentElement;
@@ -12,5 +13,8 @@ changeModeButton.addEventListener('click', () => {
     })
     listItemsText.forEach((elem) => {
             elem.classList.toggle('dark-text-color');
+    })
+    checkBoxs.forEach((elem) => {
+            elem.classList.toggle('checkBox-Color');
     })
 });
