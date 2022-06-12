@@ -1,3 +1,7 @@
+body {
+  background-color: $Very-Light-Gray;
+}
+
 .list-header {
   // position: fixed;
   display: flex;
@@ -91,6 +95,16 @@
     border: none;
     background: none;
   }
+}
+
+footer {
+margin-top: 2rem;
+text-align: center;
+padding: 20px;
+  p {
+    color: $Dark-Grayish-Blue;
+  }
+
 }
 
 .material-symbols-outlined {

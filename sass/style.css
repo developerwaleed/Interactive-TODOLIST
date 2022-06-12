@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: hsl(0deg, 0%, 98%);
+}
+
 .list-header {
   display: flex;
   justify-content: space-between;
@@ -95,6 +99,15 @@
   background: none;
 }
 
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 20px;
+}
+footer p {
+  color: hsl(234deg, 11%, 52%);
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 40;
 }
@@ -109,7 +122,7 @@ h3 {
 
 #wrapper {
   display: flex;
-  justify-content: center;
+  margin-left: 1.5rem;
   align-items: center;
   flex-flow: row wrap;
   background-color: transparent;
@@ -118,13 +131,13 @@ h3 {
 
 .menu {
   background: #fff;
-  width: 100vw;
+  width: 85vw;
   padding: 20px;
   border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 12px;
 }
 .menu-item {
   display: flex;

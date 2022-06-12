@@ -15,7 +15,8 @@ h3 {
 }
 #wrapper {
   display: flex;
-  justify-content: center;
+  margin-left: 1.5rem;
+  // justify-content: center;
   align-items: center;
   flex-flow: row wrap;
   background-color: transparent;
@@ -26,13 +27,13 @@ h3 {
 }
 .menu {
   background: $white;
-  width: 100vw;
+  width: 85vw;
   padding: 20px;
   border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 12px;
   &-item {
     display: flex;
     align-items: center;
