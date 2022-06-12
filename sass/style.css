@@ -10,7 +10,6 @@
 }
 
 .list-header {
-  position: fixed;
   display: flex;
   justify-content: space-between;
   height: 30vh;
@@ -33,7 +32,7 @@
 .task-input {
   display: flex;
   position: absolute;
-  margin-top: 7rem;
+  margin-top: -6.5rem;
   margin-left: 1.5rem;
   background-color: white;
   width: 85vw;
@@ -59,8 +58,7 @@
 .Task-Container {
   margin-left: 1.5rem;
   background-color: white;
-  margin-top: 11rem;
-  position: absolute;
+  margin-top: -2rem;
   width: 85vw;
   border-radius: 6px;
   box-shadow: 0px 2px 100px -40px hsl(234deg, 11%, 52%);
@@ -80,8 +78,108 @@
   outline: none;
 }
 
+.show-data {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px;
+}
+.show-data #show-items-qty {
+  font-size: 14px;
+  color: hsl(234deg, 11%, 52%);
+}
+.show-data button {
+  cursor: pointer;
+  font-size: 14px;
+  color: hsl(234deg, 11%, 52%);
+  border: none;
+  background: none;
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 40;
+}
+
+h1,
+h3 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+
+.menu {
+  background: #fff;
+  width: 100vw;
+  padding: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 40px;
+  transition: 0.3s ease;
+}
+.menu-item:last-child {
+  margin-right: 0px;
+}
+.menu-item.inactive {
+  background-color: transparent !important;
+}
+.menu-item.inactive svg {
+  color: #000 !important;
+}
+.menu-item.inactive .menu-item__text {
+  min-width: 0px;
+  opacity: 0;
+  font-size: 0px;
+}
+.menu-item.purple {
+  background-color: #eef1fb;
+  color: #496ed4;
+}
+.menu-item.pink {
+  background-color: #efebfa;
+  color: #6e45d4;
+}
+.menu-item.ocher {
+  background-color: #e4d7f4;
+  color: #7638c7;
+}
+.menu-item.cyan {
+  background-color: #d3bcf1;
+  color: #6728b9;
+}
+.menu-item__text {
+  min-width: 80px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.menu-item__icon {
+  display: inline-block;
+  text-align: center;
+  font-size: 0px;
+}
+.menu-item__icon svg {
+  height: 15px;
+  width: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
