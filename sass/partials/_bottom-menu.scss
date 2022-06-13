@@ -15,15 +15,10 @@ h3 {
 }
 #wrapper {
   display: flex;
-  margin-left: 1.5rem;
-  // justify-content: center;
   align-items: center;
   flex-flow: row wrap;
   background-color: transparent;
-//   height: 100vh;
   transition: $transition;
-//   margin-top: 140px;
-
 }
 .menu {
   background: $white;
@@ -34,6 +29,8 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
   &-item {
     display: flex;
     align-items: center;
