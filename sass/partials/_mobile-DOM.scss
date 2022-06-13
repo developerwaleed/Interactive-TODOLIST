@@ -1,10 +1,31 @@
+body {
+  background-color: $Very-Light-Gray;
+}
+
+.body-darkmode {
+  background-color: $Very-Dark-Blue !important;
+}
+
+.dark-Mode {
+  background-color: $Very-Dark-Desaturated-Blue !important;
+  color: $Light-Grayish-Blue;
+  border-bottom: 1px solid $Very-Dark-Grayish-Blue !important;
+}
+
+.dark-text-color {
+  color: $Light-Grayish-Blue !important;
+}
+
+.checkBox-Color {
+  border: 1px solid $Very-Dark-Grayish-Blue !important;
+  // border-color: $Very-Dark-Grayish-Blue;
+}
+
 .list-header {
-  // position: fixed;
   display: flex;
   justify-content: space-between;
   height: 30vh;
   width: 100vw;
-  background-image: url('/images/bg-mobile-light.jpg');
   background-repeat: no-repeat;
 
   span {
@@ -15,17 +36,30 @@
     font-size: 27px;
   }
 
-  img {
-    margin-top: 50px;
-    padding-right: 20px;
+  #mode {
+    margin-top: 45px;
+    margin-right: 30px;
+    color: white;
+    font-size: 27px;
   }
+} 
+
+.mobile-lightMode-BG {
+  background-image: url('/images/bg-mobile-light.jpg');
+  background-size: cover;
+}
+
+.mobile-DarkMode-BG {
+  background-image: url('/images/bg-mobile-dark.jpg');
+  background-size: cover;
 }
 
 .task-input {
   display: flex;
-  position: absolute;
   margin-top: -6.5rem;
-  margin-left: 1.5rem;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   width: 85vw;
   padding: 10px 20px;
@@ -52,14 +86,15 @@
 }
 
 .Task-Container {
-  margin-left: 1.5rem;
+  transition: all 0.5s ease;
+  margin: auto auto;
   background-color: white;
   margin-top: -2rem;
   width: 85vw;
-  //   padding: 15px;
   border-radius: 6px;
   box-shadow: 0px 2px 100px -40px $Dark-Grayish-Blue;
   li {
+    transition: all 0.5s ease;
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -72,6 +107,21 @@
       background-color: transparent;
       border: none;
       outline: none;
+    }
+    .del-btn {
+      transition: all 0.1s ease-in-out;
+      visibility: hidden;
+      cursor: pointer;
+    }
+    .btn-container {
+      // transition: all 0.5s ease;
+      display: flex;
+      gap: 10px;
+    }
+    &:hover .del-btn{
+      transition: all 0.5s ease;
+      visibility: visible;
+
     }
   }
 }
@@ -93,6 +143,15 @@
   }
 }
 
+footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  p {
+    color: $Dark-Grayish-Blue;
+  }
+}
+
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 40;
+  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 50;
 }

@@ -10,115 +10,60 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <script defer src="./js/bottomMenu.js"></script>
+    <script defer src="./js/toggle-DarkMode.js"></script>
+    <script defer src="./js/crudFuntions.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.17.0/feather.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/fd88df213b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>TO DO LIST</title>
   </head>
   <body>
     <main>
-      <div class="list-header">
+      <div class="list-header mobile-lightMode-BG">
         <span>T O D O</span>
-        <img src="./images/icon-moon.svg" alt="toggle-mode" height="20px" />
+        <i id="mode" class="fa-solid fa-moon"></i>
       </div>
-      <div class="task-input">
+      <div class="list-item task-input">
         <div class="checkbox" id="input-div"></div>
         <input
           type="text"
           class="input-task"
+          id="input-new-task"
           name="input-task"
           placeholder="Creat a new todo.."
         />
       </div>
 
-      <ul class="Task-Container">
-        <li id="Task1">
-          <div class="sub-task">
-            <div class="checkbox" id="input-div"></div>
-            <input
-              class="input-task"
-              id="Task1-input"
-              for="Task 1"
-              disabled
-              value="Have Cofee"
-            />
-          </div>
-          <span class="material-symbols-outlined"> delete </span>
-        </li>
-
-        <li id="Task1">
-          <div class="sub-task">
-            <div class="checkbox" id="input-div"></div>
-            <input
-              class="input-task"
-              id="Task1-input"
-              for="Task 1"
-              disabled
-              value="Have Cofee"
-            />
-          </div>
-          <span class="material-symbols-outlined"> delete </span>
-        </li>
-        <li id="Task1">
-          <div class="sub-task">
-            <div class="checkbox" id="input-div"></div>
-            <input
-              class="input-task"
-              id="Task1-input"
-              for="Task 1"
-              disabled
-              value="Have Cofee"
-            />
-          </div>
-          <span class="material-symbols-outlined"> delete </span>
-        </li>
-        <li id="Task1">
-          <div class="sub-task">
-            <div class="checkbox" id="input-div"></div>
-            <input
-              class="input-task"
-              id="Task1-input"
-              for="Task 1"
-              disabled
-              value="Have Cofee"
-            />
-          </div>
-          <span class="material-symbols-outlined"> delete </span>
-        </li>
-        <li id="Task1">
-          <div class="sub-task">
-            <div class="checkbox" id="input-div"></div>
-            <input
-              class="input-task"
-              id="Task1-input"
-              for="Task 1"
-              disabled
-              value="Have Cofee"
-            />
-          </div>
-          <span class="material-symbols-outlined"> delete </span>
-        </li>
-        <li id="Task1">
-          <div class="sub-task">
-            <div class="checkbox" id="input-div"></div>
-            <input
-              class="input-task"
-              id="Task1-input"
-              for="Task 1"
-              disabled
-              value="Have Cofee"
-            />
-          </div>
-          <span class="material-symbols-outlined"> delete </span>
-        </li>
-
-        <div class="show-data">
+      <div class="Task-Container">
+        <ul id="Task-Container" >
+          <!-- <li id="Task1" class="list-item">
+            <div class="sub-task">
+              <div class="checkbox" id="input-div"></div>
+              <input
+                class="input-task"
+                id="Task1-input"
+                for="Task 1"
+                disabled
+                value="Have Cofee"
+              />
+            </div>
+            <div class="btn-container">
+              <span class="del-btn material-symbols-outlined"> edit </span>
+              <span class="del-btn material-symbols-outlined"> delete </span>
+            </div>
+          </li> -->
+        </ul>
+        <div class="list-item show-data">
           <span id="show-items-qty">5 Items Left</span>
           <button type="button">Clear Completed</button>
         </div>
-      </ul>
+      </div>
 
       <div id="wrapper" class="purple">
-        <div class="menu">
+        <div class="menu list-item">
           <div class="menu-item inactive purple" data-color="purple">
             <div class="menu-item__icon">
               <i data-feather="list"></i>
@@ -139,6 +84,9 @@
           </div>
         </div>
       </div>
+      <footer class="footer">
+        <p>Drag and Drop to reorder List</p>
+      </footer>
     </main>
   </body>
 </html>
