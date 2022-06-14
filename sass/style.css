@@ -152,9 +152,18 @@ footer {
 footer p {
   color: hsl(234deg, 11%, 52%);
 }
+footer #Display-Error {
+  padding: 30px;
+  color: red;
+  font-style: italic;
+}
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 50;
+}
+
+.editable-task {
+  background-color: rgba(79, 47, 207, 0.2);
 }
 
 h1,
