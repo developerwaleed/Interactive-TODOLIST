@@ -22,31 +22,35 @@ const populateLocalStorage = () => {
   localStorage.setItem('Tasks', data);
 };
 
+const listItem = (index, iscompleted, description) => {
+  return `<li id="Task${index}" class="list-item">
+  <div class="sub-task">
+    <div class="checkbox ${
+      iscompleted ? 'check-bg' : ''
+    }" id="check-box ${index}"><img class="check-icon ${
+iscompleted ? 'show' : ''
+}" src="./images/icon-check.svg" alt=""></div>
+    <input
+      class="input-task ${iscompleted ? 'check-Task' : ''}"
+      id="Task${index}"
+      for="Task ${index}"
+      disabled
+      value="${description}"
+    />
+  </div>
+  <div class="btn-container">
+    <span class="del-btn material-symbols-outlined edit-btn" id=""edit${index}> edit </span>
+    <span class="del-btn material-symbols-outlined delete-btn" id=del${index}> delete </span>
+  </div>
+</li>`
+}
+
 const display = () => {
   taskContainer.innerHTML = '';
   let j = 0;
   todo.forEach((element) => {
     j += 1;
-    taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
-                <div class="sub-task">
-                  <div class="checkbox ${
-                    element.completed ? 'check-bg' : ''
-                  }" id="check-box ${j}"><img class="check-icon ${
-      element.completed ? 'show' : ''
-    }" src="./images/icon-check.svg" alt=""></div>
-                  <input
-                    class="input-task ${element.completed ? 'check-Task' : ''}"
-                    id="Task${j}"
-                    for="Task ${j}"
-                    disabled
-                    value="${element.description}"
-                  />
-                </div>
-                <div class="btn-container">
-                  <span class="del-btn material-symbols-outlined edit-btn" id=""edit${j}> edit </span>
-                  <span class="del-btn material-symbols-outlined delete-btn" id=del${j}> delete </span>
-                </div>
-              </li>`;
+    taskContainer.innerHTML += listItem(j, element.completed, element.description );
   });
   registerElements();
 };
@@ -57,26 +61,7 @@ const displayActive = () => {
   let j = 0;
   filteredArr.forEach((element) => {
     j += 1;
-    taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
-                <div class="sub-task">
-                  <div class="checkbox ${
-                    element.completed ? 'check-bg' : ''
-                  }" id="check-box ${j}"><img class="check-icon ${
-      element.completed ? 'show' : ''
-    }" src="./images/icon-check.svg" alt=""></div>
-                  <input
-                    class="input-task ${element.completed ? 'check-Task' : ''}"
-                    id="Task${j}"
-                    for="Task ${j}"
-                    disabled
-                    value="${element.description}"
-                  />
-                </div>
-                <div class="btn-container">
-                  <span class="del-btn material-symbols-outlined edit-btn" id=""edit${j}> edit </span>
-                  <span class="del-btn material-symbols-outlined delete-btn" id=del${j}> delete </span>
-                </div>
-              </li>`;
+    taskContainer.innerHTML += listItem(j, element.completed, element.description )
   });
   registerElements();
 };
@@ -87,26 +72,7 @@ const displaycomplete = () => {
   let j = 0;
   filteredArr.forEach((element) => {
     j += 1;
-    taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
-                <div class="sub-task">
-                  <div class="checkbox ${
-                    element.completed ? 'check-bg' : ''
-                  }" id="check-box ${j}"><img class="check-icon ${
-      element.completed ? 'show' : ''
-    }" src="./images/icon-check.svg" alt=""></div>
-                  <input
-                    class="input-task ${element.completed ? 'check-Task' : ''}"
-                    id="Task${j}"
-                    for="Task ${j}"
-                    disabled
-                    value="${element.description}"
-                  />
-                </div>
-                <div class="btn-container">
-                  <span class="del-btn material-symbols-outlined edit-btn" id=""edit${j}> edit </span>
-                  <span class="del-btn material-symbols-outlined delete-btn" id=del${j}> delete </span>
-                </div>
-              </li>`;
+    taskContainer.innerHTML += listItem(j, element.completed, element.description );
   });
   registerElements();
 };
