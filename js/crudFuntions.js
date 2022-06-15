@@ -20,9 +20,13 @@ const display = () => {
     j += 1;
     taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
                 <div class="sub-task">
-                  <div class="checkbox ${ element.completed ? 'check-bg' : ''}" id="check-box ${j}"><img class="check-icon ${ element.completed ? 'show' : ''}" src="./images/icon-check.svg" alt=""></div>
+                  <div class="checkbox ${
+                    element.completed ? 'check-bg' : ''
+                  }" id="check-box ${j}"><img class="check-icon ${
+      element.completed ? 'show' : ''
+    }" src="./images/icon-check.svg" alt=""></div>
                   <input
-                    class="input-task ${ element.completed ? 'check-Task' : ''}"
+                    class="input-task ${element.completed ? 'check-Task' : ''}"
                     id="Task${j}"
                     for="Task ${j}"
                     disabled
@@ -37,7 +41,6 @@ const display = () => {
   });
   registerElements();
   targetDataDiv.innerHTML = `${todo.length} Items Left`;
-  // errorField.innerHTML = '';
 };
 
 const reAssignIndex = () => {
@@ -56,6 +59,7 @@ const registerElements = () => {
     //   const doneBtn = document.querySelectorAll('.done-btn');
     const delBtn = document.querySelectorAll('.delete-btn');
     const editBtn = document.querySelectorAll('.edit-btn');
+    const clearBtn = document.getElementById('clear-btn');
 
     delBtn.forEach((del) => {
       del.addEventListener('click', () => {
@@ -78,14 +82,21 @@ const registerElements = () => {
     targetTaskField.forEach((task) => {
       task.addEventListener('keypress', (e) => {
         if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-          task.disabled = true;
-          console.log(task);
-          task.parentElement.parentElement.classList.remove('editable-task');
-          todo.forEach((n) => {
-            if (task.id === `Task${n.index}`) {
-              n.description = task.value;
-            }
-          });
+          if (task.value.length > 0) {
+            task.disabled = true;
+            task.parentElement.parentElement.classList.remove('editable-task');
+            todo.forEach((n) => {
+              if (task.id === `Task${n.index}`) {
+                n.description = task.value;
+              }
+            });
+          } else {
+            errorField.innerHTML = 'Input Field cannot be empty!!';
+            setTimeout(() => {
+              errorField.innerHTML = '';
+            }, 5000);
+          }
+
           populateLocalStorage();
           display();
         }
@@ -108,21 +119,39 @@ const registerElements = () => {
       box.addEventListener('click', () => {
         const checkbox = box;
         const checkboxid = box.id;
-        const checkboxidNumber = Number(checkboxid.replace(/[^0-9]/g,''));
+        const checkboxidNumber = Number(checkboxid.replace(/[^0-9]/g, ''));
 
         checkbox.classList.toggle('check-bg');
         checkbox.children[0].style.display = 'block';
+        checkbox.parentElement.children[1].classList.toggle('check-Task');
 
-        todo.forEach(element => {
-          console.log('index=', element.index);
-          if(element.index === checkboxidNumber)
-          {
-            console.log('executed');
-            element.completed = true;
+        todo.forEach((element) => {
+          if (element.index === checkboxidNumber) {
+            console.log('execture');
+            if (element.completed === false) {
+              console.log('it is false');
+              element.completed = true;
+              console.log(element);
+            } else {
+              element.completed === true;
+              console.log('it is true');
+              element.completed = false;
+            }
           }
         });
         populateLocalStorage();
       });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      console.log('enter');
+      const filteredArr = todo.filter((x) => x.completed !== true);
+      todo = filteredArr;
+      console.table('filtered Array=', filteredArr);
+      console.table('todo Array=', todo);
+      reAssignIndex();
+      populateLocalStorage();
+      display();
     });
   }
 };
@@ -147,6 +176,21 @@ inputNewTodo.addEventListener('keypress', (e) => {
       }, 5000);
     }
   }
+});
+
+const targetInputCheckBox = document.getElementById('input-check-Box');
+
+targetInputCheckBox.addEventListener('click', () => {
+  if (inputNewTodo.value.length > 0) {
+    add(inputNewTodo.value);
+    inputNewTodo.value = '';
+  } else {
+    errorField.innerHTML = 'Input Field cannot be empty!!';
+    setTimeout(() => {
+      errorField.innerHTML = '';
+    }, 5000);
+  }
+  
 });
 
 display();
