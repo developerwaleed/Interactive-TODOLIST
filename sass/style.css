@@ -80,13 +80,44 @@ body {
 }
 
 .checkbox {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin-right: 1rem;
   color: hsl(236deg, 33%, 92%);
   cursor: pointer;
   border: 1px solid hsl(236deg, 33%, 92%);
+}
+
+.uniqucheckbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  color: hsl(236deg, 33%, 92%);
+  cursor: pointer;
+  border: 1px solid hsl(236deg, 33%, 92%);
+}
+
+.check-icon {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.check-bg {
+  background: linear-gradient(135deg, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-Task {
+  opacity: 0.3;
+  text-decoration: line-through;
 }
 
 .Task-Container {
@@ -99,7 +130,6 @@ body {
   box-shadow: 0px 2px 100px -40px hsl(234deg, 11%, 52%);
 }
 .Task-Container li {
-  transition: all 0.5s ease;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -152,9 +182,18 @@ footer {
 footer p {
   color: hsl(234deg, 11%, 52%);
 }
+footer #Display-Error {
+  padding: 30px;
+  color: red;
+  font-style: italic;
+}
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 50;
+}
+
+.editable-task {
+  background-color: rgba(79, 47, 207, 0.2);
 }
 
 h1,

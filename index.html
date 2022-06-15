@@ -10,8 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <script defer src="./js/bottomMenu.js"></script>
-    <script defer src="./js/toggle-DarkMode.js"></script>
     <script defer src="./js/crudFuntions.js"></script>
+    <script defer src="./js/toggle-DarkMode.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.17.0/feather.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script
@@ -27,10 +27,12 @@
         <i id="mode" class="fa-solid fa-moon"></i>
       </div>
       <div class="list-item task-input">
-        <div class="checkbox" id="input-div"></div>
+        <div class="checkbox" id="input-check-Box">
+          <img class="check-icon" src="./images/icon-check.svg" alt="">
+        </div>
         <input
           type="text"
-          class="input-task"
+          class=""
           id="input-new-task"
           name="input-task"
           placeholder="Creat a new todo.."
@@ -38,45 +40,30 @@
       </div>
 
       <div class="Task-Container">
-        <ul id="Task-Container" >
-          <!-- <li id="Task1" class="list-item">
-            <div class="sub-task">
-              <div class="checkbox" id="input-div"></div>
-              <input
-                class="input-task"
-                id="Task1-input"
-                for="Task 1"
-                disabled
-                value="Have Cofee"
-              />
-            </div>
-            <div class="btn-container">
-              <span class="del-btn material-symbols-outlined"> edit </span>
-              <span class="del-btn material-symbols-outlined"> delete </span>
-            </div>
-          </li> -->
+        <ul id="Task-Container">
+          <!-- The Data is fetched from JS -->
         </ul>
         <div class="list-item show-data">
           <span id="show-items-qty">5 Items Left</span>
-          <button type="button">Clear Completed</button>
+          <button type="button" id="clear-btn">Clear Completed</button>
         </div>
       </div>
 
       <div id="wrapper" class="purple">
         <div class="menu list-item">
-          <div class="menu-item inactive purple" data-color="purple">
+          <div class="menu-item inactive purple" id="Nav-bar-Active" data-color="purple">
+            <div class="menu-item__icon">
+              <i data-feather="zap"></i>
+            </div>
+            <div class="menu-item__text" >Active</div>
+          </div>
+          <div class="menu-item pink active" id="Nav-bar-All" data-color="pink">
             <div class="menu-item__icon">
               <i data-feather="list"></i>
             </div>
             <div class="menu-item__text">All</div>
           </div>
-          <div class="menu-item pink active" data-color="pink">
-            <div class="menu-item__icon">
-              <i data-feather="zap"></i>
-            </div>
-            <div class="menu-item__text">Active</div>
-          </div>
-          <div class="menu-item inactive ocher" data-color="ocher">
+          <div class="menu-item inactive ocher" id="Nav-bar-complete" data-color="ocher">
             <div class="menu-item__icon">
               <i data-feather="check"></i>
             </div>
@@ -86,6 +73,7 @@
       </div>
       <footer class="footer">
         <p>Drag and Drop to reorder List</p>
+        <p id="Display-Error"> </p>
       </footer>
     </main>
   </body>
