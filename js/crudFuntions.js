@@ -22,7 +22,7 @@ const display = () => {
                 <div class="sub-task">
                   <div class="checkbox ${ element.completed ? 'check-bg' : ''}" id="check-box ${j}"><img class="check-icon ${ element.completed ? 'show' : ''}" src="./images/icon-check.svg" alt=""></div>
                   <input
-                    class="input-task"
+                    class="input-task ${ element.completed ? 'check-Task' : ''}"
                     id="Task${j}"
                     for="Task ${j}"
                     disabled

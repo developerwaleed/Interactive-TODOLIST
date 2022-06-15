@@ -101,6 +101,11 @@ body {
   justify-content: center;
 }
 
+.check-Task {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+
 .Task-Container {
   transition: all 0.5s ease;
   margin: auto auto;
