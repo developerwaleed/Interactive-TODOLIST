@@ -3,8 +3,17 @@ const taskContainer = document.getElementById('Task-Container');
 const targetDataDiv = document.getElementById('show-items-qty');
 const delBtn = document.querySelectorAll('.delete-btn');
 const errorField = document.getElementById('Display-Error');
+const TargetNavAllBtn = document.getElementById('Nav-bar-All');
+const TargetNavActiveBtn = document.getElementById('Nav-bar-Active');
+const TargetNavCompleteBtn = document.getElementById('Nav-bar-complete');
 
 let todo = JSON.parse(localStorage.getItem('Tasks')) || [];
+
+function updateRemainingTaskLength() {
+  const filteredArr = todo.filter((x) => x.completed !== true);
+  remainingTask = filteredArr.length;
+  targetDataDiv.innerHTML = `${remainingTask} Items Left`;
+}
 
 let i = 0;
 
@@ -40,7 +49,66 @@ const display = () => {
               </li>`;
   });
   registerElements();
-  targetDataDiv.innerHTML = `${todo.length} Items Left`;
+};
+
+const displayActive = () => {
+  const filteredArr = todo.filter((x) => x.completed !== true);
+  taskContainer.innerHTML = '';
+  let j = 0;
+  filteredArr.forEach((element) => {
+    j += 1;
+    taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
+                <div class="sub-task">
+                  <div class="checkbox ${
+                    element.completed ? 'check-bg' : ''
+                  }" id="check-box ${j}"><img class="check-icon ${
+      element.completed ? 'show' : ''
+    }" src="./images/icon-check.svg" alt=""></div>
+                  <input
+                    class="input-task ${element.completed ? 'check-Task' : ''}"
+                    id="Task${j}"
+                    for="Task ${j}"
+                    disabled
+                    value="${element.description}"
+                  />
+                </div>
+                <div class="btn-container">
+                  <span class="del-btn material-symbols-outlined edit-btn" id=""edit${j}> edit </span>
+                  <span class="del-btn material-symbols-outlined delete-btn" id=del${j}> delete </span>
+                </div>
+              </li>`;
+  });
+  registerElements();
+};
+
+const displaycomplete = () => {
+  const filteredArr = todo.filter((x) => x.completed === true);
+  taskContainer.innerHTML = '';
+  let j = 0;
+  filteredArr.forEach((element) => {
+    j += 1;
+    taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
+                <div class="sub-task">
+                  <div class="checkbox ${
+                    element.completed ? 'check-bg' : ''
+                  }" id="check-box ${j}"><img class="check-icon ${
+      element.completed ? 'show' : ''
+    }" src="./images/icon-check.svg" alt=""></div>
+                  <input
+                    class="input-task ${element.completed ? 'check-Task' : ''}"
+                    id="Task${j}"
+                    for="Task ${j}"
+                    disabled
+                    value="${element.description}"
+                  />
+                </div>
+                <div class="btn-container">
+                  <span class="del-btn material-symbols-outlined edit-btn" id=""edit${j}> edit </span>
+                  <span class="del-btn material-symbols-outlined delete-btn" id=del${j}> delete </span>
+                </div>
+              </li>`;
+  });
+  registerElements();
 };
 
 const reAssignIndex = () => {
@@ -64,10 +132,7 @@ const registerElements = () => {
     delBtn.forEach((del) => {
       del.addEventListener('click', () => {
         const delBtn = del;
-        console.log(del);
-        console.log(delBtn.id);
         todo.forEach((n) => {
-          console.log('called');
           if (delBtn.id === `del${n.index}`) {
             todo.splice(n.index - 1, 1);
           }
@@ -127,24 +192,20 @@ const registerElements = () => {
 
         todo.forEach((element) => {
           if (element.index === checkboxidNumber) {
-            console.log('execture');
             if (element.completed === false) {
-              console.log('it is false');
               element.completed = true;
-              console.log(element);
             } else {
               element.completed === true;
-              console.log('it is true');
               element.completed = false;
             }
           }
         });
         populateLocalStorage();
+        updateRemainingTaskLength();
       });
     });
 
     clearBtn.addEventListener('click', () => {
-      console.log('enter');
       const filteredArr = todo.filter((x) => x.completed !== true);
       todo = filteredArr;
       console.table('filtered Array=', filteredArr);
@@ -190,7 +251,19 @@ targetInputCheckBox.addEventListener('click', () => {
       errorField.innerHTML = '';
     }, 5000);
   }
-  
 });
 
+TargetNavAllBtn.addEventListener('click', () => {
+  display();
+});
+
+TargetNavActiveBtn.addEventListener('click', () => {
+  displayActive();
+});
+
+TargetNavCompleteBtn.addEventListener('click', () => {
+  displaycomplete();
+});
+
+updateRemainingTaskLength();
 display();

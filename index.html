@@ -41,22 +41,7 @@
 
       <div class="Task-Container">
         <ul id="Task-Container">
-          <!-- <li id="Task1" class="list-item">
-            <div class="sub-task">
-              <div class="checkbox" id="input-div"></div>
-              <input
-                class="input-task"
-                id="Task1-input"
-                for="Task 1"
-                disabled
-                value="Have Cofee"
-              />
-            </div>
-            <div class="btn-container">
-              <span class="del-btn material-symbols-outlined"> edit </span>
-              <span class="del-btn material-symbols-outlined"> delete </span>
-            </div>
-          </li> -->
+          <!-- The Data is fetched from JS -->
         </ul>
         <div class="list-item show-data">
           <span id="show-items-qty">5 Items Left</span>
@@ -66,19 +51,19 @@
 
       <div id="wrapper" class="purple">
         <div class="menu list-item">
-          <div class="menu-item inactive purple" data-color="purple">
+          <div class="menu-item inactive purple" id="Nav-bar-Active" data-color="purple">
+            <div class="menu-item__icon">
+              <i data-feather="zap"></i>
+            </div>
+            <div class="menu-item__text" >Active</div>
+          </div>
+          <div class="menu-item pink active" id="Nav-bar-All" data-color="pink">
             <div class="menu-item__icon">
               <i data-feather="list"></i>
             </div>
             <div class="menu-item__text">All</div>
           </div>
-          <div class="menu-item pink active" data-color="pink">
-            <div class="menu-item__icon">
-              <i data-feather="zap"></i>
-            </div>
-            <div class="menu-item__text">Active</div>
-          </div>
-          <div class="menu-item inactive ocher" data-color="ocher">
+          <div class="menu-item inactive ocher" id="Nav-bar-complete" data-color="ocher">
             <div class="menu-item__icon">
               <i data-feather="check"></i>
             </div>
