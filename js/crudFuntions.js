@@ -20,7 +20,7 @@ const display = () => {
     j += 1;
     taskContainer.innerHTML += `<li id="Task${j}" class="list-item">
                 <div class="sub-task">
-                  <div class="checkbox" id="input-div"></div>
+                  <div class="checkbox ${ element.completed ? 'check-bg' : ''}" id="check-box ${j}"><img class="check-icon ${ element.completed ? 'show' : ''}" src="./images/icon-check.svg" alt=""></div>
                   <input
                     class="input-task"
                     id="Task${j}"
@@ -50,34 +50,12 @@ const reAssignIndex = () => {
 
 const registerElements = () => {
   if (todo.length > 0) {
-    //   const checkboxes = document.querySelectorAll('.check-box');
+    const checkboxes = document.querySelectorAll('.checkbox');
     const targetTaskField = document.querySelectorAll('.input-task');
     //   const kebabMenu = document.querySelectorAll('.vertical-dots');
     //   const doneBtn = document.querySelectorAll('.done-btn');
     const delBtn = document.querySelectorAll('.delete-btn');
     const editBtn = document.querySelectorAll('.edit-btn');
-
-    //   checkboxes.forEach((box) => {
-    //     box.addEventListener('click', this.updateCompleteTask.bind(this));
-    //   });
-    //   kebabMenu.forEach((dot) => {
-    //     dot.addEventListener('click', this.kebabMenuClicked.bind(this));
-    //   });
-    //   doneBtn.forEach((done) => {
-    //     done.addEventListener('click', this.saveChanges.bind(this));
-    //   });
-
-    // targetTaskField.forEach((input) => {
-    //   input.addEventListener('click', () => {
-    //     const targetBtn = input.target;
-    //     const targetParent = targetBtn.parentElement;
-    //     targetParent.classList.add('dot-menu');
-    //     targetParent.children[0].children[1].disabled = false;
-    //     targetParent.children[1].style.display = 'none';
-    //     targetParent.children[3].style.display = 'block';
-    //     targetParent.children[2].style.display = 'block';
-    //   });
-    // });
 
     delBtn.forEach((del) => {
       del.addEventListener('click', () => {
@@ -125,6 +103,27 @@ const registerElements = () => {
         // display();
       });
     });
+
+    checkboxes.forEach((box) => {
+      box.addEventListener('click', () => {
+        const checkbox = box;
+        const checkboxid = box.id;
+        const checkboxidNumber = Number(checkboxid.replace(/[^0-9]/g,''));
+
+        checkbox.classList.toggle('check-bg');
+        checkbox.children[0].style.display = 'block';
+
+        todo.forEach(element => {
+          console.log('index=', element.index);
+          if(element.index === checkboxidNumber)
+          {
+            console.log('executed');
+            element.completed = true;
+          }
+        });
+        populateLocalStorage();
+      });
+    });
   }
 };
 
@@ -138,18 +137,16 @@ const add = (description, completed = false, index = (k += 1)) => {
 
 inputNewTodo.addEventListener('keypress', (e) => {
   if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-    if(inputNewTodo.value.length > 0 )
-    {
-    add(inputNewTodo.value);
-    inputNewTodo.value = '';
-    }
-    else {
+    if (inputNewTodo.value.length > 0) {
+      add(inputNewTodo.value);
+      inputNewTodo.value = '';
+    } else {
       errorField.innerHTML = 'Input Field cannot be empty!!';
       setTimeout(() => {
         errorField.innerHTML = '';
       }, 5000);
+    }
   }
-}
 });
 
 display();
