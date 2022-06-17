@@ -27,10 +27,11 @@
         <i id="mode" class="fa-solid fa-moon"></i>
       </div>
       <div class="list-item task-input">
-        <div class="checkbox" id="input-check-Box">
+        <div onclick= "addNewTask(this)" class="checkbox" id="input-check-Box">
           <img class="check-icon" src="./images/icon-check.svg" alt="">
         </div>
         <input
+        onkeypress = "addNewTask(this)"
           type="text"
           class=""
           id="input-new-task"
@@ -45,25 +46,25 @@
         </ul>
         <div class="list-item show-data">
           <span id="show-items-qty">5 Items Left</span>
-          <button type="button" id="clear-btn">Clear Completed</button>
+          <button onclick = "clearCompletedTask()" type="button" id="clear-btn">Clear Completed</button>
         </div>
       </div>
 
       <div id="wrapper" class="purple">
         <div class="menu list-item">
-          <div class="menu-item inactive purple" id="Nav-bar-Active" data-color="purple">
+          <div onclick = "displayActive()" class="menu-item inactive purple" id="Nav-bar-Active" data-color="purple">
             <div class="menu-item__icon">
               <i data-feather="zap"></i>
             </div>
             <div class="menu-item__text" >Active</div>
           </div>
-          <div class="menu-item pink active" id="Nav-bar-All" data-color="pink">
+          <div onclick = "display()" class="menu-item pink active" id="Nav-bar-All" data-color="pink">
             <div class="menu-item__icon">
               <i data-feather="list"></i>
             </div>
             <div class="menu-item__text">All</div>
           </div>
-          <div class="menu-item inactive ocher" id="Nav-bar-complete" data-color="ocher">
+          <div onclick = "displaycomplete()" class="menu-item inactive ocher" id="Nav-bar-complete" data-color="ocher">
             <div class="menu-item__icon">
               <i data-feather="check"></i>
             </div>
