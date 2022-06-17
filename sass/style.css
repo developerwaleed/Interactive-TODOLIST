@@ -53,12 +53,12 @@ body {
 }
 
 .mobile-lightMode-BG {
-  background-image: url("/images/bg-mobile-light.jpg");
+  background-image: url("../images/bg-mobile-light.jpg");
   background-size: cover;
 }
 
 .mobile-DarkMode-BG {
-  background-image: url("/images/bg-mobile-dark.jpg");
+  background-image: url("../images/bg-mobile-dark.jpg");
   background-size: cover;
 }
 
@@ -282,11 +282,11 @@ h3 {
 
 @media screen and (min-width: 470px) {
   .mobile-lightMode-BG {
-    background-image: url("/images/bg-desktop-light.jpg");
+    background-image: url("../images/bg-desktop-light.jpg");
     background-size: cover;
   }
   .mobile-DarkMode-BG {
-    background-image: url("/images/bg-desktop-dark.jpg");
+    background-image: url("../images/bg-desktop-dark.jpg");
     background-size: cover;
   }
   .list-header span {
