@@ -69,6 +69,7 @@ body {
     // border: 1px solid $Very-Light-Grayish-Blue;
   }
   input {
+    width: 100%;
     border: none;
     outline: none;
     background-color: transparent;
@@ -105,7 +106,7 @@ body {
 
 .check-bg {
   background: $Check-Background;
-  color:white;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,13 +134,15 @@ body {
     border-bottom: 1px solid $Very-Light-Grayish-Blue;
     .sub-task {
       display: flex;
+      width: 100%;
     }
     input {
+      width: 100%;
       background-color: transparent;
       border: none;
       outline: none;
     }
-    .del-btn {
+    .btns {
       transition: all 0.1s ease-in-out;
       visibility: hidden;
       cursor: pointer;
@@ -147,12 +150,19 @@ body {
     .btn-container {
       display: flex;
       gap: 10px;
+      .done-btn {
+        display: none;
+      }
     }
-    &:hover .del-btn {
+    &:hover .btns {
       transition: all 0.5s ease;
       visibility: visible;
     }
   }
+}
+
+#themeChangeBtn {
+cursor: pointer;
 }
 
 .show-data {

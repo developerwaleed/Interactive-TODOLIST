@@ -11,7 +11,6 @@
     />
     <script defer src="./js/bottomMenu.js"></script>
     <script defer src="./js/crudFuntions.js"></script>
-    <script defer src="./js/toggle-DarkMode.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.17.0/feather.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script
@@ -24,7 +23,9 @@
     <main>
       <div class="list-header mobile-lightMode-BG">
         <span>T O D O</span>
-        <i id="mode" class="fa-solid fa-moon"></i>
+        <div class="theme" id="mode" >
+          <i onclick = "changeTheme()" class="fa-solid fa-moon" id="themeChangeBtn"></i>
+        </div>
       </div>
       <div class="list-item task-input">
         <div onclick= "addNewTask(this)" class="checkbox" id="input-check-Box">

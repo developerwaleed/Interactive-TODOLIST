@@ -74,6 +74,7 @@ body {
   border-radius: 6px;
 }
 .task-input input {
+  width: 100%;
   border: none;
   outline: none;
   background-color: transparent;
@@ -137,13 +138,15 @@ body {
 }
 .Task-Container li .sub-task {
   display: flex;
+  width: 100%;
 }
 .Task-Container li input {
+  width: 100%;
   background-color: transparent;
   border: none;
   outline: none;
 }
-.Task-Container li .del-btn {
+.Task-Container li .btns {
   transition: all 0.1s ease-in-out;
   visibility: hidden;
   cursor: pointer;
@@ -152,9 +155,16 @@ body {
   display: flex;
   gap: 10px;
 }
-.Task-Container li:hover .del-btn {
+.Task-Container li .btn-container .done-btn {
+  display: none;
+}
+.Task-Container li:hover .btns {
   transition: all 0.5s ease;
   visibility: visible;
+}
+
+#themeChangeBtn {
+  cursor: pointer;
 }
 
 .show-data {
