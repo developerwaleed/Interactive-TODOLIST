@@ -204,9 +204,8 @@ const display = () => {
       element.completed,
       element.description
     );
-    setThemeonPageLoad();
   });
-
+  setThemeonPageLoad();
   updateRemainingTaskLength();
 };
 
@@ -220,6 +219,8 @@ const displayActive = () => {
       element.description
     );
   });
+  setThemeonPageLoad();
+  updateRemainingTaskLength();
 };
 
 const displaycomplete = () => {
@@ -232,6 +233,8 @@ const displaycomplete = () => {
       element.description
     );
   });
+  setThemeonPageLoad();
+  updateRemainingTaskLength();
 };
 
 const reAssignIndex = () => {
