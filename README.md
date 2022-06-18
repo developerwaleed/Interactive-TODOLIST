@@ -23,7 +23,7 @@ ScreenShot 5                                      |   ScreenShot 6
 ## Built With ✔️
 
 - HTML 😄
-- CSS 🔥
+- SASS 🔥
 - JavaScript ES6 😋
 - WebPack 😉
 
