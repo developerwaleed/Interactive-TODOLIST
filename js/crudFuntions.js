@@ -82,7 +82,7 @@ let todo = JSON.parse(localStorage.getItem('Tasks')) || [];
 
 function updateRemainingTaskLength() {
   const filteredArr = todo.filter((x) => x.completed !== true);
-  targetDataDiv.innerHTML = `${filteredArr.length} Items Left`;
+  targetDataDiv.innerHTML = `${filteredArr.length} Task Left`;
 }
 
 let i = 0;
@@ -231,7 +231,7 @@ const displaycomplete = () => {
     );
   });
   setThemeonPageLoad();
-  updateRemainingTaskLength();
+  targetDataDiv.innerHTML = `${filteredArr.length} Tasks Completed`;
 };
 
 const reAssignIndex = () => {
