@@ -30,7 +30,7 @@ ScreenShot 5                                      |   ScreenShot 6
 
 ## Live Demo ✔️
 
-[Live Demo Link](https://caasperr.github.io/LeaderBoard-App/)
+[Live Demo Link](https://caasperr.github.io/Interactive-TODOLIST/)
 
 
 ## Getting Started 🙌
