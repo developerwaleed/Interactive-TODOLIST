@@ -13,6 +13,7 @@ h3 {
   color: #fff;
   text-transform: uppercase;
 }
+
 #wrapper {
   display: flex;
   align-items: center;
@@ -20,6 +21,7 @@ h3 {
   background-color: transparent;
   transition: $transition;
 }
+
 .menu {
   background: $white;
   width: 85vw;
@@ -31,6 +33,7 @@ h3 {
   margin-top: 12px;
   margin-left: auto;
   margin-right: auto;
+
   &-item {
     display: flex;
     align-items: center;
@@ -38,36 +41,11 @@ h3 {
     padding: 12px;
     border-radius: 40px;
     transition: $transition;
+
     &:last-child {
-      margin-right: 0px;
+      margin-right: 0;
     }
-    &.inactive {
-      background-color: transparent !important;
-      svg {
-        color: #000 !important;
-      }
-      .menu-item__text {
-        min-width: 0px;
-        opacity: 0;
-        font-size: 0px;
-      }
-    }
-    &.purple {
-      background-color: lighten($purple, 40%);
-      color: $purple;
-    }
-    &.pink {
-      background-color: lighten($pink, 40%);
-      color: $pink;
-    }
-    &.ocher {
-      background-color: lighten($ocher, 40%);
-      color: $ocher;
-    }
-    &.cyan {
-      background-color: lighten($cyan, 40%);
-      color: $cyan;
-    }
+
     &__text {
       min-width: 80px;
       text-align: center;
@@ -76,14 +54,50 @@ h3 {
       opacity: 1;
       transition: opacity $transition;
     }
+
     &__icon {
       display: inline-block;
       text-align: center;
-      font-size: 0px;
+      font-size: 0;
+
       svg {
         height: 15px;
         width: 15px;
       }
+    }
+
+    &.inactive {
+      background-color: transparent !important;
+
+      svg {
+        color: #000 !important;
+      }
+
+      .menu-item__text {
+        min-width: 0;
+        opacity: 0;
+        font-size: 0;
+      }
+    }
+
+    &.purple {
+      background-color: lighten($purple, 40%);
+      color: $purple;
+    }
+
+    &.pink {
+      background-color: lighten($pink, 40%);
+      color: $pink;
+    }
+
+    &.ocher {
+      background-color: lighten($ocher, 40%);
+      color: $ocher;
+    }
+
+    &.cyan {
+      background-color: lighten($cyan, 40%);
+      color: $cyan;
     }
   }
 }

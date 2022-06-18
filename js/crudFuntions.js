@@ -108,7 +108,6 @@ const editTask = (task) => {
   targetInput.disabled = false;
   targetInput.focus();
   task.style.display = 'none';
-  console.log(task);
   task.nextElementSibling.style.display = 'block';
   task.parentElement.parentElement.classList.add('editable-task');
 };
@@ -147,7 +146,6 @@ const doneEditing = (element) => {
   element.previousElementSibling.style.display = 'block';
   const elementid = Number(element.id.replace(/[^0-9]/g, ''));
   const targetEditField = document.getElementById(`input${elementid}`);
-  console.log('elem=', targetEditField);
 
   if (targetEditField.value.length > 0) {
     targetEditField.disabled = true;
@@ -155,7 +153,6 @@ const doneEditing = (element) => {
       'editable-task'
     );
     todo.forEach((n, index) => {
-      console.log(`input${n.index}`);
       if (targetEditField.id === `input${n.index}`) {
         n.description = targetEditField.value;
       }
@@ -249,7 +246,7 @@ const saveEditValue = (element) => {
       element.disabled = true;
       element.parentElement.parentElement.classList.remove('editable-task');
       todo.forEach((n, index) => {
-        if (element.id === `Task${n.index}`) {
+        if (element.id === `input${n.index}`) {
           n.description = element.value;
         }
       });
@@ -306,7 +303,3 @@ targetInputCheckBox.addEventListener('click', () => {
 window.onload = setThemeonPageLoad();
 
 display();
-// if (JSON.parse(localStorage.getItem('isDarkMode')) === true) {
-//   darkMode();
-//   console.log('hell0');
-// }
