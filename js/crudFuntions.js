@@ -241,7 +241,7 @@ const reAssignIndex = () => {
 };
 
 const saveEditValue = (element) => {
-  if (window.event.code === 'Enter' || window.event.code === 'NumpadEnter') {
+  if (window.event.code === 'Enter' || window.event.code === 'NumpadEnter' || window.event.code === '') {
     if (element.value.length > 0) {
       element.disabled = true;
       element.parentElement.parentElement.classList.remove('editable-task');
@@ -274,8 +274,8 @@ const add = (
   display();
 };
 
-const addNewTask = (element) => {
-  if (window.event.code === 'Enter' || window.event.code === 'NumpadEnter') {
+const addNewTask = (element,e) => {
+  if (window.event.code === 'Enter' || window.event.code === 'NumpadEnter' || window.event.code === '') {
     if (element.value.length > 0) {
       add(element.value);
       element.value = '';
