@@ -18,21 +18,32 @@
       crossorigin="anonymous"
     ></script>
     <title>TO DO LIST</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./images/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <main>
       <div class="list-header mobile-lightMode-BG">
         <span>T O D O</span>
-        <div class="theme" id="mode" >
-          <i onclick = "changeTheme()" class="fa-solid fa-moon" id="themeChangeBtn"></i>
+        <div class="theme" id="mode">
+          <i
+            onclick="changeTheme()"
+            class="fa-solid fa-moon"
+            id="themeChangeBtn"
+          ></i>
         </div>
       </div>
       <div class="list-item task-input">
-        <div onclick= "addNewTask(this)" class="checkbox" id="input-check-Box">
-          <img class="check-icon" src="./images/icon-check.svg" alt="">
+        <div onclick="addNewTask(this)" class="checkbox" id="input-check-Box">
+          <img class="check-icon" src="./images/icon-check.svg" alt="" />
         </div>
         <input
-        onkeypress = "addNewTask(this)"
+          onkeypress="addNewTask(this)"
           type="text"
           class=""
           id="input-new-task"
@@ -47,25 +58,42 @@
         </ul>
         <div class="list-item show-data">
           <span id="show-items-qty">5 Items Left</span>
-          <button onclick = "clearCompletedTask()" type="button" id="clear-btn">Clear Completed</button>
+          <button onclick="clearCompletedTask()" type="button" id="clear-btn">
+            Clear Completed
+          </button>
         </div>
       </div>
 
       <div id="wrapper" class="purple">
         <div class="menu list-item">
-          <div onclick = "displayActive()" class="menu-item inactive purple" id="Nav-bar-Active" data-color="purple">
+          <div
+            onclick="displayActive()"
+            class="menu-item inactive purple"
+            id="Nav-bar-Active"
+            data-color="purple"
+          >
             <div class="menu-item__icon">
               <i data-feather="zap"></i>
             </div>
-            <div class="menu-item__text" >Active</div>
+            <div class="menu-item__text">Active</div>
           </div>
-          <div onclick = "display()" class="menu-item pink active" id="Nav-bar-All" data-color="pink">
+          <div
+            onclick="display()"
+            class="menu-item pink active"
+            id="Nav-bar-All"
+            data-color="pink"
+          >
             <div class="menu-item__icon">
               <i data-feather="list"></i>
             </div>
             <div class="menu-item__text">All</div>
           </div>
-          <div onclick = "displaycomplete()" class="menu-item inactive ocher" id="Nav-bar-complete" data-color="ocher">
+          <div
+            onclick="displaycomplete()"
+            class="menu-item inactive ocher"
+            id="Nav-bar-complete"
+            data-color="ocher"
+          >
             <div class="menu-item__icon">
               <i data-feather="check"></i>
             </div>
@@ -75,7 +103,7 @@
       </div>
       <footer class="footer">
         <p>Drag and Drop to reorder List</p>
-        <p id="Display-Error"> </p>
+        <p id="Display-Error"></p>
       </footer>
     </main>
   </body>
