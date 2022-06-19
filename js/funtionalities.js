@@ -78,6 +78,8 @@ const setThemeonPageLoad = () => {
   }
 };
 
+// CRUD Operations
+
 let todo = JSON.parse(localStorage.getItem('Tasks')) || [];
 
 function updateRemainingTaskLength() {
@@ -169,7 +171,7 @@ const doneEditing = (element) => {
 };
 
 const listItem = (index, iscompleted, description) => {
-  return `<li id="Task${index}" class="list-item">
+  return `<li id="Task${index}" class="list-item draggables" draggable="true">
   <div class="sub-task">
     <div onclick = "toggleCheckBox(this)" class="checkbox ${
       iscompleted ? 'check-bg' : ''
@@ -204,6 +206,7 @@ const display = () => {
   });
   setThemeonPageLoad();
   updateRemainingTaskLength();
+  dragging();
 };
 
 const displayActive = () => {
@@ -303,3 +306,63 @@ targetInputCheckBox.addEventListener('click', () => {
 window.onload = setThemeonPageLoad();
 
 display();
+
+//Dragging functions
+
+// Get element postion
+function getPositionOfElement(container, y) {
+  const draggableElements = [
+    ...container.querySelectorAll('.draggables:not(.dragging'),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: child };
+      }
+      return closest;
+    },
+    { offset: Number.NEGATIVE_INFINITY },
+  ).element;
+}
+
+function dragging() {
+  const draggables = document.querySelectorAll('.draggables');
+  const container = document.getElementById('Task-Container');
+
+  function setIndex() {
+    const objArray = [...container.querySelectorAll('.draggables')];
+    const tempArr = objArray.map((element) => ({
+      description: element.children[0].children[1].value,
+      completed: element.children[0].children[0].classList.contains('check-bg')? true : false,
+      index: Number(element.id.substring(
+        element.id.indexOf('k') + 1,
+        element.id.length,
+        )),
+      }));
+      todo = tempArr;
+      reAssignIndex();
+      populateLocalStorage();
+  }
+  
+
+  draggables.forEach((draggable) => {
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging');
+    });
+    container.addEventListener('dragover', (e) => {
+      const dragging = document.querySelector('.dragging');
+      e.preventDefault();
+      const detectElement = getPositionOfElement(container, e.clientY);
+      if (detectElement !== null) {
+        container.insertBefore(dragging, detectElement);
+      }
+    });
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging');
+      setIndex();
+    });
+  });
+}

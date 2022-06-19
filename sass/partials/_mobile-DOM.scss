@@ -65,10 +65,6 @@ body {
   padding: 10px 20px;
   border-radius: 6px;
 
-  div {
-    // border: 1px solid $Very-Light-Grayish-Blue;
-  }
-
   input {
     width: 100%;
     border: none;
@@ -213,5 +209,13 @@ footer {
 }
 
 .editable-task {
+  background-color: rgba(79, 47, 207, 0.2);
+}
+
+.draggables {
+  cursor: move;
+}
+.dragging {
+  opacity: 0.5;
   background-color: rgba(79, 47, 207, 0.2);
 }

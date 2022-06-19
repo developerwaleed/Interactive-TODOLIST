@@ -206,6 +206,15 @@ footer #Display-Error {
   background-color: rgba(79, 47, 207, 0.2);
 }
 
+.draggables {
+  cursor: move;
+}
+
+.dragging {
+  opacity: 0.5;
+  background-color: rgba(79, 47, 207, 0.2);
+}
+
 h1,
 h3 {
   width: 100%;
