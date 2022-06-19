@@ -27,6 +27,18 @@ ScreenShot 5                                      |   ScreenShot 6
 - JavaScript ES6 😋
 - WebPack 😉
 
+## Functionalites 😄
+
+- Can Add New task. 😄
+- Can edit Task by hovering on the field. 😋
+- Can Delete Task by hovering on the field. 🙌
+- Can clear completed Task.🥳
+- Can switch between dark and light mode. 🌑
+- Bottom NavBar can be used to filter the tasks. 😉
+- Accessibility options are used. 🔥🔥
+- User can resort the list by using drag and drop functionality. 🔥🥳🥳
+
+    
 
 ## Live Demo ✔️
 
