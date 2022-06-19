@@ -3,6 +3,8 @@ const taskContainer = document.getElementById('Task-Container');
 const targetDataDiv = document.getElementById('show-items-qty');
 const errorField = document.getElementById('Display-Error');
 const targetInputCheckBox = document.getElementById('input-check-Box');
+const targetDragDiv = document.getElementById('drag-div-message');
+
 
 // Dark Mode FUNCION
 
@@ -204,9 +206,11 @@ const display = () => {
       element.description
     );
   });
+  
   setThemeonPageLoad();
   updateRemainingTaskLength();
   dragging();
+  targetDragDiv.style.display = 'block';
 };
 
 const displayActive = () => {
@@ -221,6 +225,7 @@ const displayActive = () => {
   });
   setThemeonPageLoad();
   updateRemainingTaskLength();
+  targetDragDiv.style.display = 'none';
 };
 
 const displaycomplete = () => {
@@ -235,6 +240,7 @@ const displaycomplete = () => {
   });
   setThemeonPageLoad();
   targetDataDiv.innerHTML = `${filteredArr.length} Tasks Completed`;
+  targetDragDiv.style.display = 'none';
 };
 
 const reAssignIndex = () => {
