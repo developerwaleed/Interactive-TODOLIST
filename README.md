@@ -42,7 +42,7 @@ ScreenShot 5                                      |   ScreenShot 6
 
 ## Live Demo ✔️
 
-[Live Demo Link](https://caasperr.github.io/Interactive-TODOLIST/)
+[Live Demo Link](https://developerwaleed.github.io/Interactive-TODOLIST/)
 
 
 ## Getting Started 🙌
