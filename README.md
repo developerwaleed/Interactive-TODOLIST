@@ -4,20 +4,7 @@
 
 > This Website Allows you to creat your game and add your players score.
 
-ScreenShot 1                                      |  ScreenShot 2                                  |
-:------------------------------------------------:|:-----------------------------------------------:
-<img src=".\images\ScreenShots\Screenshot 1.png" height="600" width="280"> | <img src=".\images\ScreenShots\Screenshot 2.png" height="600" width="280">
-ScreenShot 3                                      |   ScreenShot 4                           
-:------------------------------------------------:|:-----------------------------------------------:
-<img src=".\images\ScreenShots\Screenshot 3.png" height="600" width="280">    |  <img src=".\images\ScreenShots\Screenshot 4.png" height="600" width="280">
-ScreenShot 5                                      |   ScreenShot 6                           
-:------------------------------------------------:|:-----------------------------------------------:
-<img src=".\images\ScreenShots\Screenshot 5.png" height="600" width="280">     |  <img src=".\images\ScreenShots\Screenshot 6.png" height="600" width="280">
-:-----------------------------------------------: |:-----------------------------------------------:
-<p align="left"> <img 
-    width="550"
-    height="300"
-    src='./images/ScreenShots/Screenshot 7.png'</p>
+![App Screenshot](./images/mock.png)
 
                               
 ## Built With ✔️
