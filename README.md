@@ -29,7 +29,7 @@
 
 ## Live Demo ✔️
 
-[Live Demo Link](https://developerwaleed.github.io/Interactive-TODOLIST/)
+[Live Demo](https://developerwaleed.github.io/Interactive-TODOLIST/)
 
 
 ## Getting Started 🙌
