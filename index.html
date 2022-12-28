@@ -38,73 +38,71 @@
           ></i>
         </div>
       </div>
-      <div class="list-item task-input">
-        <div onclick="addNewTask(this)" class="checkbox" id="input-check-Box">
-          <img class="check-icon" src="./images/icon-check.svg" alt="" />
-        </div>
-        <input
-          onkeypress="addNewTask(this)"
-          type="text"
-          class=""
-          id="input-new-task"
-          name="input-task"
-          placeholder="Creat a new todo.."
-        />
-      </div>
-
-      <div class="Task-Container">
-        <ul id="Task-Container">
-          <!-- The Data is fetched from JS -->
-        </ul>
-        <div class="list-item show-data">
-          <span id="show-items-qty">5 Items Left</span>
-          <button onclick="clearCompletedTask()" type="button" id="clear-btn">
-            Clear Completed
-          </button>
-        </div>
-      </div>
-
-      <div id="wrapper" class="purple">
-        <div class="menu list-item">
-          <div
-            onclick="displayActive()"
-            class="menu-item inactive purple"
-            id="Nav-bar-Active"
-            data-color="purple"
-          >
-            <div class="menu-item__icon">
-              <i data-feather="zap"></i>
+          <div class="list-item task-input">
+            <div onclick="addNewTask(this)" class="checkbox" id="input-check-Box">
+              <img class="check-icon" src="./images/icon-check.svg" alt="" />
             </div>
-            <div class="menu-item__text">Active</div>
+            <input
+              onkeypress="addNewTask(this)"
+              type="text"
+              class=""
+              id="input-new-task"
+              name="input-task"
+              placeholder="Creat a new todo.."
+            />
           </div>
-          <div
-            onclick="display()"
-            class="menu-item pink active"
-            id="Nav-bar-All"
-            data-color="pink"
-          >
-            <div class="menu-item__icon">
-              <i data-feather="list"></i>
+          <div class="Task-Container">
+            <ul id="Task-Container">
+              <!-- The Data is fetched from JS -->
+            </ul>
+            <div class="list-item show-data">
+              <span id="show-items-qty">5 Items Left</span>
+              <button onclick="clearCompletedTask()" type="button" id="clear-btn">
+                Clear Completed
+              </button>
             </div>
-            <div class="menu-item__text">All</div>
           </div>
-          <div
-            onclick="displaycomplete()"
-            class="menu-item inactive ocher"
-            id="Nav-bar-complete"
-            data-color="ocher"
-          >
-            <div class="menu-item__icon">
-              <i data-feather="check"></i>
+          <div id="wrapper" class="purple">
+            <div class="menu list-item">
+              <div
+                onclick="displayActive()"
+                class="menu-item inactive purple"
+                id="Nav-bar-Active"
+                data-color="purple"
+              >
+                <div class="menu-item__icon">
+                  <i data-feather="zap"></i>
+                </div>
+                <div class="menu-item__text">Active</div>
+              </div>
+              <div
+                onclick="display()"
+                class="menu-item pink active"
+                id="Nav-bar-All"
+                data-color="pink"
+              >
+                <div class="menu-item__icon">
+                  <i data-feather="list"></i>
+                </div>
+                <div class="menu-item__text">All</div>
+              </div>
+              <div
+                onclick="displaycomplete()"
+                class="menu-item inactive ocher"
+                id="Nav-bar-complete"
+                data-color="ocher"
+              >
+                <div class="menu-item__icon">
+                  <i data-feather="check"></i>
+                </div>
+                <div class="menu-item__text">Completed</div>
+              </div>
             </div>
-            <div class="menu-item__text">Completed</div>
           </div>
-        </div>
-      </div>
-      <footer class="footer">
-        <p id="drag-div-message">Drag and Drop to reorder List</p>
-        <p id="Display-Error"></p>
-      </footer>
+          <footer class="footer">
+            <p id="drag-div-message">Drag and Drop to reorder List</p>
+            <p id="Display-Error"></p>
+          </footer>
     </main>
   </body>
 </html>
