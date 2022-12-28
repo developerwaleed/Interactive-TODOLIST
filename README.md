@@ -44,7 +44,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 GymFit <a name="about-project"></a>
+# 📖 To-Do-List <a name="about-project"></a>
 
 **To-DO-lIST** is a web application that is created only using JS. It allows you to manage your day effectively. The application is packed with many great features, i.e. drag and drop, delete completed tasks, filter the tasks according to your need.
 
