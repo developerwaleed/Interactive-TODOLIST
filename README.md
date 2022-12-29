@@ -96,7 +96,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-- Node Package Manager (npm)
+- Live Server
 
 ### Setup
 
@@ -121,14 +121,12 @@ Make sure you have something to run the application on live server.
 ```sh
   cd Interactive-TODOLIST
 ```
-  serve index.html on live server
 
 
 ### Usage
 
-To run the project, execute the following command:
-
-- Run `npm run start` or `npm start` to start a development server.
+To run the project:
+- Open `Index.html` on live server.
 
 ### Run tests
 
